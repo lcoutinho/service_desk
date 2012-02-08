@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ticket number:</b>
+  <%= @ticket.ticket_number %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @ticket.title %>
+</p>
+
+<hr/>
+<h2>Task</h2>
+<table>
+  <tr>
+    <th>Task
+    </th>
+  </tr>
+  <% @ticket.tasks.each do |tsk| %>
+    <tr>
+      <td class="field">
+        <%= tsk.description %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<hr/>
+<%= link_to 'New Ticket', new_ticket_path %> |
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'View All', tickets_path %>
+
